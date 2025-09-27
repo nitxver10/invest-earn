@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
             async function checkAuthentication() {
                 try {
-                    const response = await fetch('http://192.168.1.3:5000/portfolio', {
+                    const response = await fetch('https://invest-earn-backend.onrender.com/portfolio', {
                         headers: {
                             'Authorization': `Bearer ${token}`
                         }
@@ -228,8 +228,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const investmentHorizonSelect = document.getElementById('investment-horizon');
             const communicationPreferencesSelect = document.getElementById('communication-preferences');
 
-            async function fetchPortfolio() {
-                const response = await fetch('http://192.168.1.3:5000/portfolio', {
+                const response = await fetch('https://invest-earn-backend.onrender.com/portfolio', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -280,8 +279,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
 
             async function fetchWatchlist() {
-                const response = await fetch('http://192.168.1.3:5000/watchlist', {
-                    headers: {
+                const response = await fetch('https://invest-earn-backend.onrender.com/watchlist', {
                         'Authorization': `Bearer ${token}`
                     }
                 });
@@ -312,8 +310,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 });
             }
 
-                const response = await fetch('http://192.168.1.3:5000/preferences', {
-                    headers: {
+                const response = await fetch('https://invest-earn-backend.onrender.com/preferences', {
                         'Authorization': `Bearer ${token}`
                     }
                 });
@@ -339,7 +336,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const portfolio = await fetchPortfolio();
             const watchlist = await fetchWatchlist();
 
-            const ws = new WebSocket('ws://192.168.1.3:5000');
+            const ws = new WebSocket('wss://invest-earn-backend.onrender.com');
 
             ws.onmessage = function(event) {
                 const marketData = JSON.parse(event.data);
@@ -411,7 +408,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const purchasePrice = parseFloat(purchasePriceInput.value);
                 const purchaseDate = purchaseDateInput.value;
 
-                const response = await fetch('http://192.168.1.3:5000/portfolio', {
+                const response = await fetch('https://invest-earn-backend.onrender.com/portfolio', {
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`
@@ -476,7 +473,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const assetId = watchlistAssetIdInput.value;
                 const assetName = watchlistAssetNameInput.value;
 
-                const response = await fetch('http://192.168.1.3:5000/watchlist', {
+                const response = await fetch('https://invest-earn-backend.onrender.com/watchlist', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -509,8 +506,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             watchlistBody.addEventListener('click', async function(e) {
                 if (e.target.classList.contains('remove-from-watchlist')) {
                     const assetId = e.target.dataset.assetId;
-                    const response = await fetch(`http://192.168.1.3:5000/watchlist/${assetId}`,
-                        {
+                                        const response = await fetch(`https://invest-earn-backend.onrender.com/watchlist/${assetId}`,                        {
                             method: 'DELETE',
                             headers: {
                                 'Authorization': `Bearer ${token}`
@@ -536,7 +532,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const investmentHorizon = investmentHorizonSelect.value;
                 const communicationPreferences = communicationPreferencesSelect.value;
 
-                const response = await fetch('http://192.168.1.3:5000/preferences', {
+                const response = await fetch('https://invest-earn-backend.onrender.com/preferences', {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
@@ -566,7 +562,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const logoutBtn = document.getElementById('logout-btn');
             if(logoutBtn) {
                 logoutBtn.addEventListener('click', async function() {
-                    const response = await fetch('http://192.168.1.3:5000/logout', { method: 'POST' });
+                    const response = await fetch('https://invest-earn-backend.onrender.com/logout', { method: 'POST' });
                     const data = await response.json();
                     if (data.success) {
                         localStorage.removeItem('token');

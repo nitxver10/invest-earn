@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             once: true,
         });
 
-        const ws = new WebSocket('ws://192.168.1.3:5000');
+        const ws = new WebSocket('wss://invest-earn-backend.onrender.com');
 
         ws.onopen = function() {
             console.log('Connected to market data WebSocket');
@@ -103,8 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const loginCaptchaDisplay = document.getElementById('loginCaptchaDisplay');
             const loginGeneratedCaptcha = document.getElementById('loginGeneratedCaptcha');
 
-            async function refreshLoginCaptcha() {
-                const response = await fetch('http://192.168.1.3:5000/captcha');
+                const response = await fetch('https://invest-earn-backend.onrender.com/captcha');
                 const data = await response.json();
                 console.log('Fetched CAPTCHA for login:', data);
                 loginCaptchaDisplay.src = data.captchaImage;
@@ -120,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const password = document.getElementById('loginPassword').value;
                 const captcha = document.getElementById('loginCaptcha').value;
                 const generatedCaptcha = loginGeneratedCaptcha.value;
-                const response = await fetch('http://192.168.1.3:5000/login', {
+                const response = await fetch('https://invest-earn-backend.onrender.com/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -145,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const registerGeneratedCaptcha = document.getElementById('registerGeneratedCaptcha');
 
             async function refreshRegisterCaptcha() {
-                const response = await fetch('http://192.168.1.3:5000/captcha');
+                const response = await fetch('https://invest-earn-backend.onrender.com/captcha');
                 const data = await response.json();
                 console.log('Fetched CAPTCHA for registration:', data);
                 registerCaptchaDisplay.src = data.captchaImage;
@@ -163,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const password = document.getElementById('registerPassword').value;
                 const captcha = document.getElementById('registerCaptcha').value;
                 const generatedCaptcha = registerGeneratedCaptcha.value;
-                const response = await fetch('http://192.168.1.3:5000/register', {
+                const response = await fetch('https://invest-earn-backend.onrender.com/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -204,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             sendForgotOtp.addEventListener('click', async function() {
                 const mobileNumber = forgotMobile.value;
-                const response = await fetch('http://192.168.1.3:5000/send-otp', {
+                const response = await fetch('https://invest-earn-backend.onrender.com/send-otp', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -228,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const mobileNumber = forgotMobile.value;
                     const otp = forgotOtp.value;
                     const newPasswordValue = newPassword.value;
-                    const response = await fetch('http://192.168.1.3:5000/reset-password', {
+                    const response = await fetch('https://invest-earn-backend.onrender.com/reset-password', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -249,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     // First step: verify OTP
                     const mobileNumber = forgotMobile.value;
                     const otp = forgotOtp.value;
-                    const response = await fetch('http://192.168.1.3:5000/verify-otp', {
+                    const response = await fetch('https://invest-earn-backend.onrender.com/verify-otp', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
