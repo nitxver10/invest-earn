@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard | Invest & Earn</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="unique-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>" type="image/svg+xml">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html#home">
+                <img src="wmremove-transformed.png" alt="Company Logo" class="company-logo me-2">
+                <span class="logo">I&E</span>
+                <span class="company-name">Invest & Earn Corp</span>
+            </a>
+            <div class="d-flex align-items-center">
+                <a href="dashboard.html" class="btn btn-outline-success btn-sm me-2" id="dashboard-btn">Dashboard</a>
+                <button class="btn btn-outline-danger btn-sm me-2" id="logout-btn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <h1 class="mb-4">Dashboard</h1>
+
+        <section id="portfolio-section" class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">My Portfolio</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Asset Name</th>
+                                <th>Quantity</th>
+                                <th>Purchase Price</th>
+                                <th>Purchase Date</th>
+                                <th>Current Value</th>
+                                <th>Gain/Loss</th>
+                            </tr>
+                        </thead>
+                        <tbody id="portfolio-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="add-asset-section" class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Add New Asset to Portfolio</h2>
+                    <form id="add-asset-form">
+                        <div id="add-asset-message" class="alert" style="display: none;"></div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="asset-id" class="form-label">Asset ID</label>
+                                <input type="text" class="form-control" id="asset-id" required>
+                                <div class="invalid-feedback">Asset ID is required.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="asset-name" class="form-label">Asset Name</label>
+                                <input type="text" class="form-control" id="asset-name" required>
+                                <div class="invalid-feedback">Asset Name is required.</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="quantity" class="form-label">Quantity</label>
+                                <input type="number" class="form-control" id="quantity" required min="0.0001" step="0.0001">
+                                <div class="invalid-feedback">Quantity is required and must be a positive number.</div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="purchase-price" class="form-label">Purchase Price</label>
+                                <input type="number" class="form-control" id="purchase-price" required min="0.01" step="0.01">
+                                <div class="invalid-feedback">Purchase Price is required and must be a positive number.</div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="purchase-date" class="form-label">Purchase Date</label>
+                                <input type="date" class="form-control" id="purchase-date" required>
+                                <div class="invalid-feedback">Purchase Date is required.</div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="add-asset-btn">Add Asset</button>
+                        <div id="add-asset-spinner" class="spinner-border text-primary" role="status" style="display: none;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="watchlist-section" class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">My Watchlist</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Asset Name</th>
+                                <th>Current Value</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="watchlist-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="add-watchlist-section" class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Add to Watchlist</h2>
+                    <form id="add-watchlist-form">
+                        <div id="add-watchlist-message" class="alert" style="display: none;"></div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="watchlist-asset-id" class="form-label">Asset ID</label>
+                                <input type="text" class="form-control" id="watchlist-asset-id" required>
+                                <div class="invalid-feedback">Asset ID is required.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="watchlist-asset-name" class="form-label">Asset Name</label>
+                                <input type="text" class="form-control" id="watchlist-asset-name" required>
+                                <div class="invalid-feedback">Asset Name is required.</div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="add-watchlist-btn">Add to Watchlist</button>
+                        <div id="add-watchlist-spinner" class="spinner-border text-primary" role="status" style="display: none;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="preferences-section" class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">My Preferences</h2>
+                    <form id="preferences-form">
+                        <div id="preferences-message" class="alert" style="display: none;"></div>
+                        <div class="mb-3">
+                            <label for="risk-profile" class="form-label">Risk Profile</label>
+                            <select class="form-select" id="risk-profile">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="investment-horizon" class="form-label">Investment Horizon</label>
+                            <select class="form-select" id="investment-horizon">
+                                <option value="short">Short-term (1-3 years)</option>
+                                <option value="medium">Medium-term (3-7 years)</option>
+                                <option value="long">Long-term (7+ years)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="communication-preferences" class="form-label">Communication Preferences</label>
+                            <select class="form-select" id="communication-preferences">
+                                <option value="email">Email</option>
+                                <option value="sms">SMS</option>
+                                <option value="none">None</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="save-preferences-btn">Save Preferences</button>
+                        <div id="save-preferences-spinner" class="spinner-border text-primary" role="status" style="display: none;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer py-4 mt-5 bg-light">
+        <div class="container text-center">
+            <img src="wmremove-transformed.png" alt="Company Logo" class="company-logo mb-2" style="filter: invert(1);">
+            <p class="text-muted mb-0">&copy; <span id="current-year"></span> Invest & Earn Corp. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', async function() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            async function checkAuthentication() {
+                try {
+                    const response = await fetch('http://192.168.1.3:5000/portfolio', {
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    if (response.status === 401 || response.status === 403) {
+                        localStorage.removeItem('token');
+                        window.location.href = 'index.html';
+                        return false;
+                    }
+                    return true;
+                } catch (error) {
+                    console.error('Authentication check failed:', error);
+                    localStorage.removeItem('token');
+                    window.location.href = 'index.html';
+                    return false;
+                }
+            }
+
+            if (!await checkAuthentication()) {
+                return;
+            }
+
+            const portfolioBody = document.getElementById('portfolio-body');
+            const watchlistBody = document.getElementById('watchlist-body');
+            const preferencesForm = document.getElementById('preferences-form');
+            const riskProfileSelect = document.getElementById('risk-profile');
+            const investmentHorizonSelect = document.getElementById('investment-horizon');
+            const communicationPreferencesSelect = document.getElementById('communication-preferences');
+
+            async function fetchPortfolio() {
+                const response = await fetch('http://192.168.1.3:5000/portfolio', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    localStorage.removeItem('token');
+                    window.location.href = 'index.html';
+                    return;
+                }
+
+                const data = await response.json();
+                return data.portfolio;
+            }
+
+            function renderPortfolio(portfolio, marketData) {
+                portfolioBody.innerHTML = '';
+                let totalInvestment = 0;
+                let totalCurrentValue = 0;
+
+                portfolio.forEach(asset => {
+                    const currentMarketData = marketData[asset.asset_id.toLowerCase()];
+                    const currentValue = currentMarketData ? currentMarketData.value * asset.quantity : 0;
+                    const gainLoss = currentValue - (asset.purchase_price * asset.quantity);
+                    const gainLossPercentage = (gainLoss / (asset.purchase_price * asset.quantity)) * 100;
+
+                    totalInvestment += (asset.purchase_price * asset.quantity);
+                    totalCurrentValue += currentValue;
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${asset.asset_name}</td>
+                        <td>${asset.quantity}</td>
+                        <td>${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(asset.purchase_price)}</td>
+                        <td>${new Date(asset.purchase_date).toLocaleDateString('en-IN')}</td>
+                        <td>${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(currentValue)}</td>
+                        <td class="${gainLoss >= 0 ? 'text-success' : 'text-danger'}">${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(gainLoss)} (${gainLossPercentage.toFixed(2)}%)</td>
+                    `;
+                    portfolioBody.appendChild(row);
+                });
+
+                // Update overall portfolio summary
+                document.getElementById('total-investment').textContent = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(totalInvestment);
+                document.getElementById('current-value').textContent = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(totalCurrentValue);
+                const overallGainLoss = totalCurrentValue - totalInvestment;
+                const overallGainLossPercentage = (overallGainLoss / totalInvestment) * 100;
+                document.getElementById('overall-gain-loss').textContent = `${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(overallGainLoss)} (${overallGainLossPercentage.toFixed(2)}%)`;
+            }
+
+            async function fetchWatchlist() {
+                const response = await fetch('http://192.168.1.3:5000/watchlist', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    localStorage.removeItem('token');
+                    window.location.href = 'index.html';
+                    return;
+                }
+
+                const data = await response.json();
+                return data.watchlist;
+            }
+
+            function renderWatchlist(watchlist, marketData) {
+                watchlistBody.innerHTML = '';
+                watchlist.forEach(asset => {
+                    const currentMarketData = marketData[asset.asset_id.toLowerCase()];
+                    const currentValue = currentMarketData ? currentMarketData.value : 0;
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${asset.asset_name}</td>
+                        <td>${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(currentValue)}</td>
+                        <td><button class="btn btn-danger btn-sm remove-from-watchlist" data-asset-id="${asset.asset_id}">Remove</button></td>
+                    `;
+                    watchlistBody.appendChild(row);
+                });
+            }
+
+                const response = await fetch('http://192.168.1.3:5000/preferences', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    localStorage.removeItem('token');
+                    window.location.href = 'index.html';
+                    return;
+                }
+
+                const data = await response.json();
+                return data.preferences;
+            }
+
+            function renderPreferences(preferences) {
+                if (preferences) {
+                    riskProfileSelect.value = preferences.risk_profile || 'low';
+                    investmentHorizonSelect.value = preferences.investment_horizon || 'short';
+                    communicationPreferencesSelect.value = preferences.communication_preferences || 'email';
+                }
+            }
+
+            const portfolio = await fetchPortfolio();
+            const watchlist = await fetchWatchlist();
+
+            const ws = new WebSocket('ws://192.168.1.3:5000');
+
+            ws.onmessage = function(event) {
+                const marketData = JSON.parse(event.data);
+                renderPortfolio(portfolio, marketData);
+                renderWatchlist(watchlist, marketData);
+            };
+
+            ws.onerror = function(error) {
+                console.error('WebSocket Error:', error);
+            };
+
+            const preferences = await fetchPreferences();
+            renderPreferences(preferences);
+
+                        const addAssetForm = document.getElementById('add-asset-form');
+            const addAssetBtn = document.getElementById('add-asset-btn');
+            const addAssetSpinner = document.getElementById('add-asset-spinner');
+            const addAssetMessage = document.getElementById('add-asset-message');
+
+                        addAssetForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                let isValid = true;
+                const assetIdInput = document.getElementById('asset-id');
+                const assetNameInput = document.getElementById('asset-name');
+                const quantityInput = document.getElementById('quantity');
+                const purchasePriceInput = document.getElementById('purchase-price');
+                const purchaseDateInput = document.getElementById('purchase-date');
+
+                // Reset validation states
+                assetIdInput.classList.remove('is-invalid');
+                assetNameInput.classList.remove('is-invalid');
+                quantityInput.classList.remove('is-invalid');
+                purchasePriceInput.classList.remove('is-invalid');
+                purchaseDateInput.classList.remove('is-invalid');
+
+                if (!assetIdInput.value) {
+                    assetIdInput.classList.add('is-invalid');
+                    isValid = false;
+                }
+                if (!assetNameInput.value) {
+                    assetNameInput.classList.add('is-invalid');
+                    isValid = false;
+                }
+                if (!quantityInput.value || parseFloat(quantityInput.value) <= 0) {
+                    quantityInput.classList.add('is-invalid');
+                    isValid = false;
+                }
+                if (!purchasePriceInput.value || parseFloat(purchasePriceInput.value) <= 0) {
+                    purchasePriceInput.classList.add('is-invalid');
+                    isValid = false;
+                }
+                if (!purchaseDateInput.value) {
+                    purchaseDateInput.classList.add('is-invalid');
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    return;
+                }
+
+                addAssetBtn.disabled = true;
+                addAssetSpinner.style.display = 'inline-block';
+                addAssetMessage.style.display = 'none';
+
+                const assetId = assetIdInput.value;
+                const assetName = assetNameInput.value;
+                const quantity = parseFloat(quantityInput.value);
+                const purchasePrice = parseFloat(purchasePriceInput.value);
+                const purchaseDate = purchaseDateInput.value;
+
+                const response = await fetch('http://192.168.1.3:5000/portfolio', {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ assetId, assetName, quantity, purchasePrice, purchaseDate })
+                });
+
+                const data = await response.json();
+                addAssetBtn.disabled = false;
+                addAssetSpinner.style.display = 'none';
+
+                addAssetMessage.textContent = data.message;
+                addAssetMessage.style.display = 'block';
+                if (data.success) {
+                    addAssetMessage.classList.remove('alert-danger');
+                    addAssetMessage.classList.add('alert-success');
+                    const newPortfolio = await fetchPortfolio();
+                    renderPortfolio(newPortfolio, currentMarketData);
+                    addAssetForm.reset();
+                } else {
+                    addAssetMessage.classList.remove('alert-success');
+                    addAssetMessage.classList.add('alert-danger');
+                }
+                setTimeout(() => {
+                    addAssetMessage.style.display = 'none';
+                }, 5000);
+            });
+
+                        const addWatchlistForm = document.getElementById('add-watchlist-form');
+            const addWatchlistBtn = document.getElementById('add-watchlist-btn');
+            const addWatchlistSpinner = document.getElementById('add-watchlist-spinner');
+            const addWatchlistMessage = document.getElementById('add-watchlist-message');
+
+                        addWatchlistForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                let isValid = true;
+                const watchlistAssetIdInput = document.getElementById('watchlist-asset-id');
+                const watchlistAssetNameInput = document.getElementById('watchlist-asset-name');
+
+                // Reset validation states
+                watchlistAssetIdInput.classList.remove('is-invalid');
+                watchlistAssetNameInput.classList.remove('is-invalid');
+
+                if (!watchlistAssetIdInput.value) {
+                    watchlistAssetIdInput.classList.add('is-invalid');
+                    isValid = false;
+                }
+                if (!watchlistAssetNameInput.value) {
+                    watchlistAssetNameInput.classList.add('is-invalid');
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    return;
+                }
+
+                addWatchlistBtn.disabled = true;
+                addWatchlistSpinner.style.display = 'inline-block';
+                addWatchlistMessage.style.display = 'none';
+
+                const assetId = watchlistAssetIdInput.value;
+                const assetName = watchlistAssetNameInput.value;
+
+                const response = await fetch('http://192.168.1.3:5000/watchlist', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ assetId, assetName })
+                });
+
+                const data = await response.json();
+                addWatchlistBtn.disabled = false;
+                addWatchlistSpinner.style.display = 'none';
+
+                addWatchlistMessage.textContent = data.message;
+                addWatchlistMessage.style.display = 'block';
+                if (data.success) {
+                    addWatchlistMessage.classList.remove('alert-danger');
+                    addWatchlistMessage.classList.add('alert-success');
+                    const newWatchlist = await fetchWatchlist();
+                    renderWatchlist(newWatchlist, currentMarketData);
+                    addWatchlistForm.reset();
+                } else {
+                    addWatchlistMessage.classList.remove('alert-success');
+                    addWatchlistMessage.classList.add('alert-danger');
+                }
+                setTimeout(() => {
+                    addWatchlistMessage.style.display = 'none';
+                }, 5000);
+            });
+
+            watchlistBody.addEventListener('click', async function(e) {
+                if (e.target.classList.contains('remove-from-watchlist')) {
+                    const assetId = e.target.dataset.assetId;
+                    const response = await fetch(`http://192.168.1.3:5000/watchlist/${assetId}`,
+                        {
+                            method: 'DELETE',
+                            headers: {
+                                'Authorization': `Bearer ${token}`
+                            }
+                        });
+                    const data = await response.json();
+                    if (data.success) {
+                        const newWatchlist = await fetchWatchlist();
+                        renderWatchlist(newWatchlist);
+                    } else {
+                        alert(data.message);
+                    }
+                }
+            });
+
+                        preferencesForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                savePreferencesBtn.disabled = true;
+                savePreferencesSpinner.style.display = 'inline-block';
+                preferencesMessage.style.display = 'none';
+
+                const riskProfile = riskProfileSelect.value;
+                const investmentHorizon = investmentHorizonSelect.value;
+                const communicationPreferences = communicationPreferencesSelect.value;
+
+                const response = await fetch('http://192.168.1.3:5000/preferences', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ riskProfile, investmentHorizon, communicationPreferences })
+                });
+
+                const data = await response.json();
+                savePreferencesBtn.disabled = false;
+                savePreferencesSpinner.style.display = 'none';
+
+                preferencesMessage.textContent = data.message;
+                preferencesMessage.style.display = 'block';
+                if (data.success) {
+                    preferencesMessage.classList.remove('alert-danger');
+                    preferencesMessage.classList.add('alert-success');
+                } else {
+                    preferencesMessage.classList.remove('alert-success');
+                    preferencesMessage.classList.add('alert-danger');
+                }
+                setTimeout(() => {
+                    preferencesMessage.style.display = 'none';
+                }, 5000);
+            });
+
+            const logoutBtn = document.getElementById('logout-btn');
+            if(logoutBtn) {
+                logoutBtn.addEventListener('click', async function() {
+                    const response = await fetch('http://192.168.1.3:5000/logout', { method: 'POST' });
+                    const data = await response.json();
+                    if (data.success) {
+                        localStorage.removeItem('token');
+                        window.location.href = 'index.html';
+                    }
+                });
+            }
+        });

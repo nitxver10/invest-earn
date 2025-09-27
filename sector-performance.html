@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sector Performance Prediction - Invest & Earn Corp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="unique-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>" type="image/svg+xml">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html#home">
+                <img src="wmremove-transformed.png" alt="Company Logo" class="company-logo me-2">
+                <span class="logo">I&E</span>
+                <span class="company-name">Invest & Earn Corp</span>
+            </a>
+            <div class="d-flex align-items-center">
+                <a href="dashboard.html" class="btn btn-outline-success btn-sm me-2" id="dashboard-btn">Dashboard</a>
+                <button class="btn btn-outline-danger btn-sm me-2" id="logout-btn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <h1 class="mb-4">Sector Performance Prediction</h1>
+
+        <section id="prediction-section" class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">AI-Powered Sector Analysis</h2>
+                    <p>Our AI model has analyzed various market indicators to predict the performance of different sectors for the upcoming quarter.</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <canvas id="sector-chart"></canvas>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Sector</th>
+                                        <th>Prediction</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="sector-predictions"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer py-4 mt-5 bg-light">
+        <div class="container text-center">
+            <img src="wmremove-transformed.png" alt="Company Logo" class="company-logo mb-2" style="filter: invert(1);">
+            <p class="text-muted mb-0">&copy; <span id="current-year"></span> Invest & Earn Corp. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            const sectorPredictionsBody = document.getElementById('sector-predictions');
+            const sectorChartCanvas = document.getElementById('sector-chart');
+
+            async function fetchSectorPredictions() {
+                const response = await fetch('http://localhost:5000/sector-performance', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    localStorage.removeItem('token');
+                    window.location.href = 'index.html';
+                    return;
+                }
+
+                const data = await response.json();
+                return data.predictions;
+            }
+
+            function renderPredictions(predictions) {
+                sectorPredictionsBody.innerHTML = '';
+                predictions.forEach(prediction => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${prediction.sector}</td>
+                        <td><span class="badge bg-${prediction.performance === 'Outperform' ? 'success' : prediction.performance === 'Neutral' ? 'warning' : 'danger'}">${prediction.performance}</span></td>
+                    `;
+                    sectorPredictionsBody.appendChild(row);
+                });
+            }
+
+            function renderChart(predictions) {
+                const labels = predictions.map(p => p.sector);
+                const data = predictions.map(p => {
+                    if (p.performance === 'Outperform') return 3;
+                    if (p.performance === 'Neutral') return 2;
+                    return 1;
+                });
+
+                new Chart(sectorChartCanvas, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Sector Performance Prediction',
+                            data: data,
+                            backgroundColor: [
+                                'rgba(25, 135, 84, 0.2)',
+                                'rgba(255, 193, 7, 0.2)',
+                                'rgba(220, 53, 69, 0.2)',
+                                'rgba(25, 135, 84, 0.2)',
+                                'rgba(255, 193, 7, 0.2)',
+                                'rgba(220, 53, 69, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(25, 135, 84, 1)',
+                                'rgba(255, 193, 7, 1)',
+                                'rgba(220, 53, 69, 1)',
+                                'rgba(25, 135, 84, 1)',
+                                'rgba(255, 193, 7, 1)',
+                                'rgba(220, 53, 69, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value, index, values) {
+                                        if (value === 1) return 'Underperform';
+                                        if (value === 2) return 'Neutral';
+                                        if (value === 3) return 'Outperform';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const predictions = await fetchSectorPredictions();
+            renderPredictions(predictions);
+            renderChart(predictions);
+
+            const logoutBtn = document.getElementById('logout-btn');
+            if(logoutBtn) {
+                logoutBtn.addEventListener('click', async function() {
+                    const response = await fetch('http://localhost:5000/logout', { method: 'POST' });
+                    const data = await response.json();
+                    if (data.success) {
+                        localStorage.removeItem('token');
+                        window.location.href = 'index.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

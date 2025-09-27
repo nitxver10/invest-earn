@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Investing | Invest & Earn Corp</title>
+    <meta name="description" content="Invest & Earn Corp – AI-powered investment insights, Indian market tools, SIP calculators, and portfolio analyzers. Build your financial future with smart investing.">
+    <meta name="keywords" content="investment, finance, stock market, India, cryptocurrency, mutual funds, SIP, portfolio, wealth management, financial planning">
+    <meta name="author" content="Invest & Earn Corp">
+
+    <!-- Schema.org Markup for WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Invest & Earn Corp",
+        "url": "https://www.investandearn.com"
+    }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="unique-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>" type="image/svg+xml">
+</head>
+<body>
+    <div class="aurora-background"></div>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="wmremove-transformed.png" alt="Company Logo" class="company-logo me-2">
+                <span class="logo">I&E</span>
+                <span class="company-name">Invest & Earn Corp</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#investments">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#learning-center">Learn</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about-us">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#loginRegisterModal">Login</button>
+                    <a href="dashboard.html" class="btn btn-primary btn-sm" id="dashboard-btn" style="display: none;">Dashboard</a>
+                    <button class="btn btn-danger btn-sm" id="logout-btn" style="display: none;">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="hero-title">Invest Smarter, Not Harder.</h1>
+                    <p class="hero-subtitle">Leverage institutional-grade tools and AI-powered insights to navigate the Indian & Global markets. Your journey to financial freedom starts here.</p>
+                    <a href="#" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#loginRegisterModal">Get Started for Free <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=80" class="img-fluid rounded-3 shadow-lg" alt="Financial Planning" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Investments Section -->
+    <section id="investments" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Our Investment Universe</h2>
+            <p class="section-subtitle">From the stability of bonds to the high growth of emerging equities, we provide the tools to build a diversified and resilient portfolio.</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h5 class="card-title">Indian & Global Equities</h5>
+                            <p class="card-text">Dive into the vibrant world of Indian equities, including blue-chip, mid-cap, and small-cap stocks listed on NSE & BSE.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fab fa-bitcoin"></i>
+                            </div>
+                            <h5 class="card-title">Cryptocurrencies</h5>
+                            <p class="card-text">Explore the evolving world of digital assets like Bitcoin, Ethereum, and other promising altcoins.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <h5 class="card-title">Mutual Funds & ETFs</h5>
+                            <p class="card-text">Diversify effortlessly with professionally managed Mutual Funds and Exchange Traded Funds.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h5 class="card-title">Bonds & Fixed Income</h5>
+                            <p class="card-text">Secure your capital with a range of Indian government bonds, corporate bonds, and other fixed-income instruments.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h5 class="card-title">Commodities</h5>
+                            <p class="card-text">Hedge against inflation with commodities like gold, silver, and other valuable resources.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h5 class="card-title">Real Estate</h5>
+                            <p class="card-text">Invest in tangible assets through Real Estate Investment Trusts (REITs) and other property-based opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Overview Section -->
+    <section id="market-overview" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Market Pulse</h2>
+            <p class="section-subtitle">Live Indian & Global Market Data at Your Fingertips.</p>
+            <p id="market-data-status">Loading...</p>
+            <div class="row g-4 mb-5 justify-content-center">
+                <div class="col-12"><h3 class="section-title mt-5">Indian Indices</h3></div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-chart-area me-2 text-primary"></i>Nifty 50</h6>
+                            <p class="card-text fs-5"><strong><span id="nifty50-value">--</span></strong> <span id="nifty50-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-chart-area me-2 text-primary"></i>BSE Sensex</h6>
+                            <p class="card-text fs-5"><strong><span id="bsesensex-value">--</span></strong> <span id="bsesensex-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-university me-2 text-primary"></i>Nifty Bank</h6>
+                            <p class="card-text fs-5"><strong><span id="niftybank-value">--</span></strong> <span id="niftybank-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-laptop-code me-2 text-primary"></i>Nifty IT</h6>
+                            <p class="card-text fs-5"><strong><span id="niftyit-value">--</span></strong> <span id="niftyit-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-pills me-2 text-primary"></i>Nifty Pharma</h6>
+                            <p class="card-text fs-5"><strong><span id="niftypharma-value">--</span></strong> <span id="niftypharma-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-chart-line me-2 text-primary"></i>Nifty Midcap 100</h6>
+                            <p class="card-text fs-5"><strong><span id="niftymidcap100-value">--</span></strong> <span id="niftymidcap100-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-chart-bar me-2 text-primary"></i>Nifty Smallcap 100</h6>
+                            <p class="card-text fs-5"><strong><span id="niftysmallcap100-value">--</span></strong> <span id="niftysmallcap100-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-globe me-2 text-primary"></i>Nifty 500</h6>
+                            <p class="card-text fs-5"><strong><span id="nifty500-value">--</span></strong> <span id="nifty500-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-tachometer-alt me-2 text-primary"></i>India VIX</h6>
+                            <p class="card-text fs-5"><strong><span id="indiavix-value">--</span></strong> <span id="indiavix-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-car me-2 text-primary"></i>Nifty Auto</h6>
+                            <p class="card-text fs-5"><strong><span id="niftyauto-value">--</span></strong> <span id="niftyauto-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-shopping-basket me-2 text-primary"></i>Nifty FMCG</h6>
+                            <p class="card-text fs-5"><strong><span id="niftyfmcg-value">--</span></strong> <span id="niftyfmcg-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-industry me-2 text-primary"></i>Nifty Metal</h6>
+                            <p class="card-text fs-5"><strong><span id="niftymetal-value">--</span></strong> <span id="niftymetal-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12"><h3 class="section-title mt-5">Global Indices</h3></div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-chart-line me-2 text-primary"></i>S&P 500</h6>
+                            <p class="card-text fs-5"><strong><span id="sp500-value">--</span></strong> <span id="sp500-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-chart-line me-2 text-primary"></i>NASDAQ</h6>
+                            <p class="card-text fs-5"><strong><span id="nasdaq-value">--</span></strong> <span id="nasdaq-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-chart-line me-2 text-primary"></i>Dow Jones</h6>
+                            <p class="card-text fs-5"><strong><span id="dowjones-value">--</span></strong> <span id="dowjones-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-chart-line me-2 text-primary"></i>MSCI World Index</h6>
+                            <p class="card-text fs-5"><strong><span id="msciworld-value">--</span></strong> <span id="msciworld-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-chart-line me-2 text-primary"></i>FTSE All-World</h6>
+                            <p class="card-text fs-5"><strong><span id="ftseallworld-value">--</span></strong> <span id="ftseallworld-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-chart-line me-2 text-primary"></i>Dow Jones Global Titans 50</h6>
+                            <p class="card-text fs-5"><strong><span id="djglobaltitans50-value">--</span></strong> <span id="djglobaltitans50-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-chart-line me-2 text-primary"></i>S&P Global 100</h6>
+                            <p class="card-text fs-5"><strong><span id="spglobal100-value">--</span></strong> <span id="spglobal100-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-chart-line me-2 text-primary"></i>S&P Global 1200</h6>
+                            <p class="card-text fs-5"><strong><span id="spglobal1200-value">--</span></strong> <span id="spglobal1200-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12"><h3 class="section-title mt-5">Commodities</h3></div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-coins me-2 text-primary"></i>Gold</h6>
+                            <p class="card-text fs-5"><strong><span id="gold-value">--</span></strong> <span id="gold-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-coins me-2 text-primary"></i>Silver</h6>
+                            <p class="card-text fs-5"><strong><span id="silver-value">--</span></strong> <span id="silver-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-oil-can me-2 text-primary"></i>Crude Oil</h6>
+                            <p class="card-text fs-5"><strong><span id="crudeoil-value">--</span></strong> <span id="crudeoil-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-gas-pump me-2 text-primary"></i>Natural Gas</h6>
+                            <p class="card-text fs-5"><strong><span id="naturalgas-value">--</span></strong> <span id="naturalgas-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-hammer me-2 text-primary"></i>Copper</h6>
+                            <p class="card-text fs-5"><strong><span id="copper-value">--</span></strong> <span id="copper-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-flask me-2 text-primary"></i>Aluminium</h6>
+                            <p class="card-text fs-5"><strong><span id="aluminium-value">--</span></strong> <span id="aluminium-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-atom me-2 text-primary"></i>Zinc</h6>
+                            <p class="card-text fs-5"><strong><span id="zinc-value">--</span></strong> <span id="zinc-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-battery-full me-2 text-primary"></i>Lead</h6>
+                            <p class="card-text fs-5"><strong><span id="lead-value">--</span></strong> <span id="lead-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-gem me-2 text-primary"></i>Nickel</h6>
+                            <p class="card-text fs-5"><strong><span id="nickel-value">--</span></strong> <span id="nickel-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-tshirt me-2 text-primary"></i>Cotton</h6>
+                            <p class="card-text fs-5"><strong><span id="cotton-value">--</span></strong> <span id="cotton-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12"><h3 class="section-title mt-5">Cryptocurrencies</h3></div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fab fa-bitcoin me-2 text-primary"></i>Bitcoin (BTC)</h6>
+                            <p class="card-text fs-5"><strong><span id="btc-value">--</span></strong> <span id="btc-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fab fa-ethereum me-2 text-primary"></i>Ethereum (ETH)</h6>
+                            <p class="card-text fs-5"><strong><span id="eth-value">--</span></strong> <span id="eth-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fab fa-xing me-2 text-primary"></i>Ripple (XRP)</h6>
+                            <p class="card-text fs-5"><strong><span id="xrp-value">--</span></strong> <span id="xrp-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fab fa-litecoin-sign me-2 text-primary"></i>Litecoin (LTC)</h6>
+                            <p class="card-text fs-5"><strong><span id="ltc-value">--</span></strong> <span id="ltc-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fab fa-canadian-maple-leaf me-2 text-primary"></i>Cardano (ADA)</h6>
+                            <p class="card-text fs-5"><strong><span id="ada-value">--</span></strong> <span id="ada-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fab fa-solana me-2 text-primary"></i>Solana (SOL)</h6>
+                            <p class="card-text fs-5"><strong><span id="sol-value">--</span></strong> <span id="sol-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-dog me-2 text-primary"></i>Dogecoin (DOGE)</h6>
+                            <p class="card-text fs-5"><strong><span id="doge-value">--</span></strong> <span id="doge-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-paw me-2 text-primary"></i>Shiba Inu (SHIB)</h6>
+                            <p class="card-text fs-5"><strong><span id="shib-value">--</span></strong> <span id="shib-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fab fa-avalanche me-2 text-primary"></i>Avalanche (AVAX)</h6>
+                            <p class="card-text fs-5"><strong><span id="avax-value">--</span></strong> <span id="avax-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <h3 class="section-title mt-5">Top Stocks</h3>
+            <p class="section-subtitle">A curated list of top-performing Indian stocks.</p>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">TCS</h6>
+                            <p class="card-text fs-5"><strong><span id="tcs-value">--</span></strong> <span id="tcs-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">Reliance</h6>
+                            <p class="card-text fs-5"><strong><span id="reliance-value">--</span></strong> <span id="reliance-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">HDFC Bank</h6>
+                            <p class="card-text fs-5"><strong><span id="hdfcbank-value">--</span></strong> <span id="hdfcbank-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">Infosys</h6>
+                            <p class="card-text fs-5"><strong><span id="infosys-value">--</span></strong> <span id="infosys-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">ICICI Bank</h6>
+                            <p class="card-text fs-5"><strong><span id="icicibank-value">--</span></strong> <span id="icicibank-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center mt-3"> <!-- Second row for top stocks -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">SBI</h6>
+                            <p class="card-text fs-5"><strong><span id="sbi-value">--</span></strong> <span id="sbi-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">Bharti Airtel</h6>
+                            <p class="card-text fs-5"><strong><span id="bhartiairtel-value">--</span></strong> <span id="bhartiairtel-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">ITC</h6>
+                            <p class="card-text fs-5"><strong><span id="itc-value">--</span></strong> <span id="itc-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">L&T</h6>
+                            <p class="card-text fs-5"><strong><span id="lnt-value">--</span></strong> <span id="lnt-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">Asian Paints</h6>
+                            <p class="card-text fs-5"><strong><span id="asianpaints-value">--</span></strong> <span id="asianpaints-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">Tata Motors</h6>
+                            <p class="card-text fs-5"><strong><span id="tatamotors-value">--</span></strong> <span id="tatamotors-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">Maruti Suzuki</h6>
+                            <p class="card-text fs-5"><strong><span id="marutisuzuki-value">--</span></strong> <span id="marutisuzuki-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">HUL</h6>
+                            <p class="card-text fs-5"><strong><span id="hul-value">--</span></strong> <span id="hul-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">Bajaj Finance</h6>
+                            <p class="card-text fs-5"><strong><span id="bajajfinance-value">--</span></strong> <span id="bajajfinance-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">Nestle India</h6>
+                            <p class="card-text fs-5"><strong><span id="nestleindia-value">--</span></strong> <span id="nestleindia-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h6 class="card-title">Wipro</h6>
+                            <p class="card-text fs-5"><strong><span id="wipro-value">--</span></strong> <span id="wipro-change" class="fs-6 change-indicator">(--%)</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- AI Insights Section -->
+    <section id="ai-insights" class="py-5">
+        <div class="container">
+            <h2 class="section-title">AI-Powered Insights</h2>
+            <p class="section-subtitle">Actionable intelligence and personalized recommendations to guide your investment decisions.</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h5 class="card-title">Smart Portfolio Rebalancing</h5>
+                            <p class="card-text">Our AI continuously monitors your portfolio and suggests optimal adjustments to maximize returns and minimize risk.</p>
+                            <a href="rebalance.html" class="btn btn-sm btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h5 class="card-title">Sector Performance Prediction</h5>
+                            <p class="card-text">Get ahead of the curve with our AI-powered sector performance forecasts and identify emerging trends.</p>
+                            <a href="sector-performance.html" class="btn btn-sm btn-outline-primary mt-3">View Report</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <h5 class="card-title">Personalized Investment Alerts</h5>
+                            <p class="card-text">Create custom alerts for your favorite assets and get notified of significant market movements in real-time.</p>
+                            <a href="alerts.html" class="btn btn-sm btn-outline-primary mt-3">Set Alerts</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Get Started in 3 Easy Steps</h2>
+            <p class="section-subtitle">Your journey to financial empowerment is just a few clicks away.</p>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <h5 class="card-title">1. Create Your Account</h5>
+                            <p class="card-text">Sign up for a free and secure account in minutes. No lengthy paperwork.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-search-dollar"></i>
+                            </div>
+                            <h5 class="card-title">2. Discover Opportunities</h5>
+                            <p class="card-text">Explore a universe of investment options tailored to your financial goals and risk appetite.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h5 class="card-title">3. Invest & Grow</h5>
+                            <p class="card-text">Build your portfolio with confidence and track its performance with our advanced tools.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Center Section -->
+    <section id="learning-center" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Knowledge Hub</h2>
+            <p class="section-subtitle">Expand your financial literacy with our curated collection of articles, guides, and tutorials.</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Understanding Stock Market Basics</h5>
+                            <p class="card-text">A beginner's guide to NSE, BSE, and how to start investing in India.</p>
+                            <a href="article1.html" class="btn btn-sm btn-outline-primary mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Cryptocurrency Regulations in India</h5>
+                            <p class="card-text">Stay updated on the latest legal and regulatory landscape for digital assets.</p>
+                            <a href="article2.html" class="btn btn-sm btn-outline-primary mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">A Guide to Understanding IPOs</h5>
+                            <p class="card-text">Learn about Initial Public Offerings (IPOs), how they work, and how you can invest in them.</p>
+                            <a href="article3.html" class="btn btn-sm btn-outline-primary mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="articles.html" class="btn btn-primary btn-lg">Explore All Articles <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Calculators Section -->
+    <section id="calculators" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Financial Planning Tools</h2>
+            <p class="section-subtitle">Plan your financial future with our easy-to-use investment calculators.</p>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h5 class="card-title">SIP Calculator</h5>
+                            <p class="card-text">Estimate returns on your Systematic Investment Plans.</p>
+                            <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#sipCalculatorModal">Launch Calculator</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h5 class="card-title">Compound Interest Calculator</h5>
+                            <p class="card-text">See how your money can grow over time with compounding.</p>
+                            <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#ciCalculatorModal">Launch Calculator</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h5 class="card-title">Goal-Based Planner</h5>
+                            <p class="card-text">Plan investments to achieve your specific financial goals.</p>
+                            <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#goalPlannerModal">Launch Planner</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- About Us Section -->
+        <section id="about-us" class="py-5">
+            <div class="container">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-6">
+                            <h2 class="section-title text-start">About Invest & Earn Corp</h2>
+                            <p class="section-subtitle text-start">Your trusted partner in navigating the complexities of modern financial markets with intelligence and ease.</p>
+                            <h3 class="fw-bold mt-4">Our Story & Mission</h3>
+                            <p>Founded on the principle that everyone deserves access to sophisticated investment tools, Invest & Earn Corp is dedicated to empowering individuals to achieve financial independence. Our mission is to democratize finance by providing intelligent, accessible, and transparent investment solutions, helping you build and secure your financial future.</p>
+                            <h3 class="fw-bold mt-4">Our Vision</h3>
+                            <p>We envision a world where investment decisions are simplified, driven by cutting-edge AI and deep market insights. We strive to be the leading platform that transforms complex financial data into actionable intelligence, making smart investing a reality for everyone, everywhere.</p>
+                            <h3 class="fw-bold mt-4">Our Core Values</h3>
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-start mb-2"><i class="fas fa-check-circle text-primary me-2 mt-1"></i><span><strong>Integrity:</strong> Upholding the highest standards of honesty and transparency in every interaction.</span></li>
+                                <li class="d-flex align-items-start mb-2"><i class="fas fa-check-circle text-primary me-2 mt-1"></i><span><strong>Innovation:</strong> Continuously leveraging advanced AI and technology to deliver superior insights and tools.</span></li>
+                                <li class="d-flex align-items-start mb-2"><i class="fas fa-check-circle text-primary me-2 mt-1"></i><span><strong>Client-Centric:</strong> Placing your financial success and goals at the heart of our platform and services.</span></li>
+                                <li class="d-flex align-items-start"><i class="fas fa-check-circle text-primary me-2 mt-1"></i><span><strong>Education:</strong> Committed to enhancing financial literacy and empowering informed investment decisions.</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 text-center">
+                            <img src="ok.png" class="img-fluid rounded-3 shadow-lg" alt="About Us - Financial Growth" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-5">
+        <div class="container">
+            <div class="card">
+                <div class="card-body p-1">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-6">
+                            <h2 class="section-title text-start">Invest with an Unfair Advantage</h2>
+                            <p class="section-subtitle text-start">We combine cutting-edge technology with deep market expertise to give you a decisive edge in your wealth creation journey.</p>
+                            <ul class="list-unstyled mt-4">
+                                <li class="d-flex align-items-start mb-3"><i class="fas fa-check-circle text-primary me-3 mt-1"></i><span><strong>Local Expertise:</strong> Deep understanding of Indian markets and regulations.</span></li>
+                                <li class="d-flex align-items-start mb-3"><i class="fas fa-check-circle text-primary me-3 mt-1"></i><span><strong>Advanced AI Tools:</strong> Proprietary algorithms for market analysis and prediction.</span></li>
+                                <li class="d-flex align-items-start mb-3"><i class="fas fa-check-circle text-primary me-3 mt-1"></i><span><strong>Personalized Guidance:</strong> Dedicated financial advisors to help you achieve your goals.</span></li>
+                                <li class="d-flex align-items-start"><i class="fas fa-check-circle text-primary me-3 mt-1"></i><span><strong>Secure & Compliant:</strong> Adherence to all SEBI regulations and bank-grade security.</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-3 shadow-lg" alt="Financial Advisor" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Join a growing community of successful investors who trust us to build their financial future.</p>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" id="testimonial-carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="lead">"Invest & Earn Corp has been a game-changer for my financial journey. The AI-powered insights are incredibly accurate, and the platform is so easy to use. I've seen significant growth in my portfolio since I started using it."</p>
+                                <div class="d-flex align-items-center mt-4">
+                                    <img src="https://i.pravatar.cc/150?img=1" class="rounded-circle me-3" alt="Client 1" width="60" height="60">
+                                    <div>
+                                        <h6 class="mb-0">Priya Sharma</h6>
+                                        <small class="text-muted">Mumbai, India</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="lead">"As a beginner in the stock market, I was looking for a platform that could provide guidance and support. Invest & Earn Corp has exceeded my expectations. The learning resources are excellent, and the personalized alerts have helped me make informed decisions."</p>
+                                <div class="d-flex align-items-center mt-4">
+                                    <img src="https://i.pravatar.cc/150?img=2" class="rounded-circle me-3" alt="Client 2" width="60" height="60">
+                                    <div>
+                                        <h6 class="mb-0">Rahul Verma</h6>
+                                        <small class="text-muted">Delhi, India</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find quick answers to the most common questions about our platform and services.</p>
+            <div class="card">
+                <div class="card-body">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What types of investments does Invest & Earn Corp offer?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We offer a diverse range of investment options including Indian and Global Equities, Cryptocurrencies, Indian Mutual Funds & ETFs, Bonds & Fixed Income, Commodities, and Real Estate Investment Trusts (REITs).
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How does the AI-Powered Portfolio Analyzer work?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our proprietary AI engine utilizes advanced algorithms to analyze market trends, evaluate risk factors, and identify potential growth opportunities within your portfolio. It provides actionable insights to help you make informed decisions.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Is my investment secure with Invest & Earn Corp?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, security is our top priority. We adhere to all SEBI regulations and implement industry-leading security protocols, including bank-grade encryption, to safeguard your investments and personal information.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-3">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">We're here to help. Send us a message and we'll get back to you as soon as possible.</p>
+            <div class="card">
+                <div class="card-body p-3">
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 text-center text-md-start">
+                    <a class="navbar-brand d-inline-flex align-items-center mb-3" href="index.html#home">
+                        <img src="wmremove-transformed.png" alt="Company Logo" class="company-logo me-2" style="filter: invert(1);">
+                        <span class="logo me-2">I&E</span>
+                        <span class="company-name text-white">Invest & Earn Corp</span>
+                    </a>
+                    <p class="disclaimer mt-2">
+                        Disclaimer: This platform is for educational and informational purposes only and does not constitute financial advice. Invest at your own risk.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5 class="mb-3 text-white">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html#about-us">About Us</a></li>
+                        <li><a href="index.html#investments">Products</a></li>
+                        <li><a href="index.html#learning-center">Learning Center</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5 class="mb-3 text-white">Connect With Us</h5>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="mx-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="mx-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="mx-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="mx-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="mt-4 mb-0">&copy; <span id="current-year"></span> Invest & Earn Corp. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SIP Calculator Modal -->
+    <div class="modal fade" id="sipCalculatorModal" tabindex="-1" aria-labelledby="sipCalculatorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sipCalculatorModalLabel">SIP Calculator</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="sipAmount" class="form-label">Monthly Investment (₹)</label>
+                            <input type="number" class="form-control" id="sipAmount" value="5000" min="100" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sipTenure" class="form-label">Investment Period (Years)</label>
+                            <input type="number" class="form-control" id="sipTenure" value="10" min="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sipRate" class="form-label">Expected Annual Return Rate (%)</label>
+                            <input type="number" class="form-control" id="sipRate" value="12" min="1" max="30" required>
+                        </div>
+                        <button type="button" class="btn btn-primary w-100" id="calculateSip">Calculate SIP</button>
+                    </form>
+                    <h6 class="mt-4">Estimated Value: <span id="sipResult" class="text-primary">₹ 0</span></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compound Interest Calculator Modal -->
+    <div class="modal fade" id="ciCalculatorModal" tabindex="-1" aria-labelledby="ciCalculatorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ciCalculatorModalLabel">Compound Interest Calculator</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="ciPrincipal" class="form-label">Principal Amount (₹)</label>
+                            <input type="number" class="form-control" id="ciPrincipal" value="100000" min="1000" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ciRate" class="form-label">Annual Interest Rate (%)</label>
+                            <input type="number" class="form-control" id="ciRate" value="7" min="1" max="20" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ciTenure" class="form-label">Investment Period (Years)</label>
+                            <input type="number" class="form-control" id="ciTenure" value="10" min="1" required>
+                        </div>
+                        <button type="button" class="btn btn-primary w-100" id="calculateCi">Calculate CI</button>
+                    </form>
+                    <h6 class="mt-4">Future Value: <span id="ciResult" class="text-primary">₹ 0</span></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Goal-Based Planner Modal -->
+    <div class="modal fade" id="goalPlannerModal" tabindex="-1" aria-labelledby="goalPlannerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="goalPlannerModalLabel">Goal-Based Planner</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="goalAmount" class="form-label">Goal Amount (₹)</label>
+                            <input type="number" class="form-control" id="goalAmount" value="1000000" min="10000" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="goalCurrentSavings" class="form-label">Current Savings (₹)</label>
+                            <input type="number" class="form-control" id="goalCurrentSavings" value="100000" min="0" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="goalAnnualContribution" class="form-label">Monthly Contribution (₹)</label>
+                            <input type="number" class="form-control" id="goalAnnualContribution" value="5000" min="0" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="goalRate" class="form-label">Expected Annual Return Rate (%)</label>
+                            <input type="number" class="form-control" id="goalRate" value="10" min="1" max="30" required>
+                        </div>
+                        <button type="button" class="btn btn-primary w-100" id="calculateGoal">Plan Goal</button>
+                    </form>
+                    <h6 class="mt-4">Result: <span id="goalResult" class="text-primary"></span></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login/Register Modal -->
+    <div class="modal fade" id="loginRegisterModal" tabindex="-1" aria-labelledby="loginRegisterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginRegisterModalLabel">Welcome to Invest & Earn Corp</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="true">Login</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-register-tab" data-bs-toggle="pill" data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register" aria-selected="false">Create Account</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <!-- Login Tab Content -->
+                        <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label for="loginMobile" class="form-label">Mobile Number</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">+91</span>
+                                        <input type="tel" class="form-control" id="loginMobile" placeholder="e.g., 9876543210" required pattern="[0-9]{10}">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="loginPassword" autocomplete="current-password" required>
+                                        <button class="btn btn-outline-secondary" type="button" id="toggleLoginPassword"><i class="fas fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginCaptcha" class="form-label">Captcha</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="loginCaptcha" placeholder="Enter Captcha" required>
+                                        <img src="http://192.168.1.3:5000/captcha" alt="CAPTCHA" id="loginCaptchaDisplay">
+                                        <input type="hidden" id="loginGeneratedCaptcha">
+                                    </div>
+                                    <span id="loginCaptchaError" class="text-danger small"></span>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                                <a href="#" class="d-block text-center mt-3" id="forgotPasswordLink">Forgot Password?</a>
+                            </form>
+                        </div>
+
+                        <!-- Create Account Tab Content -->
+                        <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
+                            <form id="registerForm">
+                                <div class="mb-3">
+                                    <label for="registerMobile" class="form-label">Mobile Number</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">+91</span>
+                                        <input type="tel" class="form-control" id="registerMobile" placeholder="e.g., 9876543210" required pattern="[0-9]{10}">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Email ID</label>
+                                    <input type="email" class="form-control" id="registerEmail" placeholder="name@example.com" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Password</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="registerPassword" autocomplete="new-password" required>
+                                        <button class="btn btn-outline-secondary" type="button" id="toggleRegisterPassword"><i class="fas fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="mb-3" id="registerOtpSection" style="display:none;">
+                                    <label for="registerOtp" class="form-label">OTP</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="registerOtp" placeholder="Enter OTP" pattern="[0-9]{6}">
+                                                                            <button class="btn btn-outline-primary" type="button" id="sendRegisterOtp">Send OTP</button>
+                                                                        </div>
+                                    <span id="registerOtpMessage" class="text-muted small"></span>
+                                    <div class="text-end mt-2">
+                                        <button type="button" class="btn btn-link btn-sm p-0" id="resendRegisterOtp" disabled>Resend OTP (<span id="registerOtpCountdown">60</span>s)</button>
+                                    </div>
+                                </div>                                <div class="mb-3">
+                                    <label for="registerCaptcha" class="form-label">Captcha</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="registerCaptcha" placeholder="Enter Captcha" required>
+                                        <img src="http://192.168.1.3:5000/captcha" alt="CAPTCHA" id="registerCaptchaDisplay">
+                                        <input type="hidden" id="registerGeneratedCaptcha">
+                                    </div>
+                                    <span id="registerCaptchaError" class="text-danger small"></span>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Create Account</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="forgotPasswordForm">
+                        <div class="mb-3">
+                            <label for="forgotMobile" class="form-label">Registered Mobile Number</label>
+                            <div class="input-group">
+                                <span class="input-group-text">+91</span>
+                                <input type="tel" class="form-control" id="forgotMobile" placeholder="e.g., 9876543210" required pattern="[0-9]{10}">
+                            </div>
+                        </div>
+                        <div class="mb-3" id="forgotOtpSection" style="display:none;">
+                            <label for="forgotOtp" class="form-label">OTP</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="forgotOtp" placeholder="Enter OTP" pattern="[0-9]{6}">
+                                <button class="btn btn-outline-primary" type="button" id="sendForgotOtp">Send OTP</button>
+                            </div>
+                            <span id="forgotOtpMessage" class="text-muted small"></span>
+                            <div class="text-end mt-2">
+                                <button type="button" class="btn btn-link btn-sm p-0" id="resendForgotOtp" disabled>Resend OTP (<span id="forgotOtpCountdown">60</span>s)</button>
+                            </div>
+                        </div>
+                        <div class="mb-3" id="newPasswordSection" style="display:none;">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="newPassword" autocomplete="new-password" required>
+                                <button class="btn btn-outline-secondary" type="button" id="toggleNewPassword"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100" id="forgotPasswordSubmit">Reset Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #0052FF; /* A brighter, more modern blue */
+    --secondary-color: #6B7280; /* A neutral gray for text */
+    --accent-color: #10B981; /* A vibrant green for accents */
+    --background-light: #F9FAFB; /* A very light gray for the body background */
+    --background-white: #FFFFFF;
+    --text-dark: #111827;
+    --text-light: #F9FAFB;
+    --border-color: #E5E7EB;
+    --font-family-main: 'Inter', sans-serif;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --border-radius: 0.75rem; /* 12px */
+}
+
+body {
+    font-family: var(--font-family-main);
+    color: var(--text-dark);
+    background: #f0f2f5;
+    padding-top: 50px; /* Adjust for taller navbar */
+}
+
+.aurora-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(125deg, #e0e0e0, #f5f5f5, #e0e0e0, #f5f5f5); /* Modern grayscale gradient */
+    background-size: 400% 400%;
+    animation: aurora-animation 15s ease infinite;
+}
+
+@keyframes aurora-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-main);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.section-subtitle {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+section {
+    padding: 60px 0;
+}
+
+.bg-light {
+    background-color: var(--background-light) !important;
+}
+
+.btn {
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0045D1; /* Darker shade */
+    border-color: #0045D1;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+/* --- Navigation --- */
+.company-logo {
+    height: 25px; /* Adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+    vertical-align: middle;
+}
+
+.navbar {
+    background-color: var(--background-white);
+    box-shadow: var(--shadow-md);
+    padding: 0.3rem 0;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.75rem;
+    color: var(--text-dark);
+}
+
+.navbar-brand .logo {
+    color: var(--primary-color);
+}
+
+.nav-link {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+    background-color: #EBF0FF; /* Light blue background on hover */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: transparent;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #111827; /* Dark background */
+    color: var(--text-light);
+    padding: 4rem 0;
+}
+
+.footer a {
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--text-light);
+}
+
+.footer .social-icons a {
+    font-size: 1.5rem;
+    margin: 0 0.75rem;
+}
+
+/* --- Article Pages --- */
+.article-content {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 3rem;
+}
+
+/* --- Modal --- */
+.modal-content {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.change-indicator.positive {
+    color: #10B981; /* A vibrant green */
+}
+
+.change-indicator.negative {
+    color: #EF4444; /* A vibrant red */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#market-overview .section-title {
+    animation: pulse 2s infinite;
+}
+
+#market-overview .card:hover {
+    animation: pulse 0.5s;
+}

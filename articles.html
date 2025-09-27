@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - Invest & Earn Corp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="unique-style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>" type="image/svg+xml">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html#home">
+                <img src="wmremove-transformed.png" alt="Company Logo" class="company-logo me-2">
+                <span class="logo">I&E</span>
+                <span class="company-name">Invest & Earn Corp</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#investments">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#learning-center">Learn</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about-us">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#loginRegisterModal">Login</button>
+                    <a href="dashboard.html" class="btn btn-primary btn-sm" id="dashboard-btn" style="display: none;">Dashboard</a>
+                    <button class="btn btn-danger btn-sm" id="logout-btn" style="display: none;">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <h1 class="section-title text-center mb-5">Our Articles & Insights</h1>
+        <div class="container mb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <input type="text" id="articleSearch" class="form-control form-control-lg" placeholder="Search for articles...">
+                </div>
+            </div>
+        </div>
+        
+        <section id="our-articles" class="mb-5">
+            <h2 class="section-title text-center mb-4">Our Articles</h2>
+            <p class="section-subtitle text-center">Explore our collection of articles and insights to help you on your investment journey.</p>
+            <div class="row g-4" id="articles-list">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Understanding Indian Stock Market Basics</h5>
+                            <p class="card-text">A beginner's guide to NSE, BSE, and how to start investing in India.</p>
+                            <a href="article1.html" class="btn btn-sm btn-outline-primary mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Cryptocurrency Regulations in India</h5>
+                            <p class="card-text">Stay updated on the latest legal and regulatory landscape for digital assets.</p>
+                            <a href="article2.html" class="btn btn-sm btn-outline-primary mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">A Guide to Understanding IPOs in India</h5>
+                            <p class="card-text">Learn about Initial Public Offerings (IPOs), how they work, and how you can invest in them.</p>
+                            <a href="article3.html" class="btn btn-sm btn-outline-primary mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+        <section id="where-we-invest" class="mb-5">
+            <h2 class="section-title text-center mb-4">Where We Invest: Opportunities Across Markets</h2>
+            <p class="section-subtitle text-center">We provide access to a wide array of investment opportunities across various asset classes, sectors, and key geographical regions within India.</p>
+            
+            <h3 class="text-center">Asset Classes</h3>
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Equity</h5>
+                            <p class="card-text">Direct investment in stocks listed on NSE & BSE, and indirect investments through equity mutual funds and ELSS for long-term wealth creation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Fixed Income</h5>
+                            <p class="card-text">Lower-risk options like government bonds, corporate bonds, FDs, and debt mutual funds for stable and predictable returns.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Real Estate</h5>
+                            <p class="card-text">Physical property investments, REITs, and InvITs to access property-related returns and diversify your portfolio.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Commodities</h5>
+                            <p class="card-text">Invest in precious metals like gold and silver, or agricultural products, through physical holdings or Gold ETFs for hedging and diversification.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Alternative Investments</h5>
+                            <p class="card-text">Explore less traditional assets such as private equity, hedge funds, and peer-to-peer lending for potentially higher returns with higher risk.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mt-5 text-center">Key Sectors in India</h3>
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Technology & IT</h5>
+                            <p class="card-text">Thriving sector driven by global outsourcing, digital transformation, and advancements in AI, cloud computing, and fintech solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Renewable Energy</h5>
+                            <p class="card-text">Growing sector fueled by green energy transition, EV adoption, and government initiatives in solar, wind, and bioenergy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Pharmaceuticals & Healthcare</h5>
+                            <p class="card-text">High-growth sector with increasing demand for innovation, exports, medical technology, and healthcare services.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Financial Services</h5>
+                            <p class="card-text">Broad sector including banking, insurance, and housing finance, growing due to increased financial inclusion and evolving consumer needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">FMCG (Consumer Goods)</h5>
+                            <p class="card-text">Driven by a rising middle-class, changing lifestyles, and urbanization, contributing to the growth of Fast-Moving Consumer Goods.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Infrastructure</h5>
+                            <p class="card-text">Fueled by urbanization and housing demand, with significant public and private investments in roads, ports, and urban development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mt-5 text-center">Key Geographical Regions in India</h3>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Major States</h5>
+                            <p class="card-text">Gujarat, Maharashtra, Delhi, Karnataka, Tamil Nadu, and Telangana are key states attracting significant investment and foreign direct investment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Economic Hubs</h5>
+                            <p class="card-text">Cities like Bengaluru, Hyderabad, Mumbai, and Delhi serve as major economic hubs for technology, finance, and trade.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Special Economic Zones (SEZs)</h5>
+                            <p class="card-text">Dedicated zones offering liberal economic laws and world-class infrastructure to attract investment and boost exports.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+        <div class="text-center">
+            <a href="index.html" class="btn btn-primary mt-3">Go Back to Homepage</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 text-center text-md-start">
+                    <a class="navbar-brand d-inline-flex align-items-center mb-3" href="index.html#home">
+                        <img src="wmremove-transformed.png" alt="Company Logo" class="company-logo me-2" style="filter: invert(1);">
+                        <span class="logo me-2">I&E</span>
+                        <span class="company-name text-white">Invest & Earn Corp</span>
+                    </a>
+                    <p class="disclaimer mt-2">
+                        Disclaimer: This platform is for educational and informational purposes only and does not constitute financial advice. Invest at your own risk.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5 class="mb-3 text-white">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html#about-us">About Us</a></li>
+                        <li><a href="index.html#investments">Products</a></li>
+                        <li><a href="index.html#learning-center">Learning Center</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5 class="mb-3 text-white">Connect With Us</h5>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="mx-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="mx-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="mx-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="mx-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="mt-4 mb-0">&copy; <span id="current-year"></span> Invest & Earn Corp. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
