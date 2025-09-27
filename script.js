@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const loginCaptchaDisplay = document.getElementById('loginCaptchaDisplay');
             const loginGeneratedCaptcha = document.getElementById('loginGeneratedCaptcha');
 
+            async function refreshLoginCaptcha() {
                 const response = await fetch('https://invest-earn-backend.onrender.com/captcha');
                 const data = await response.json();
                 console.log('Fetched CAPTCHA for login:', data);
