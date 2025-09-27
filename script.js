@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     try {
         // Current year for footer
         const currentYearSpan = document.getElementById('current-year');
